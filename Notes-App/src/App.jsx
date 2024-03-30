@@ -48,7 +48,10 @@ export default function App() {
 
     React.useEffect(() => {
         const timeoutId = setTimeout(()=>{
-            updateNote(tempNoteText)
+            if ( tempNoteText !== currentNote.body) {
+
+                updateNote(tempNoteText)
+            }
         }, 500)
 
         return () => clearTimeout(timeoutId)
